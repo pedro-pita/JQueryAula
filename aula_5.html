@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JSQ 5</title>
+	<script type="text/javascript" src="js/jquery-3.3.js"></script>
+	<script type="text/javascript" src="js/aula_5.js">
+	</script>
+	<style type="text/css">
+		.borda{
+			border:10px solid #00ff00;
+		}
+	</style>
+</head>
+<body>
+	<h2></h2>
+	<h2 id="cab1"></h2>
+	<p id="paragrafo">
+		Paragrafo que será manipulado!!!</p>
+	<span id="disJQ">Disparar JQ</span>
+	<p>
+		<img src="Aula 5 - Material/1.jpg" alt="foto1" title="foto1" style="width:100px;heigth:100px;"/>
+	</p>
+	<input type="text" value="sergio" />
+</body>
+</html>
+<!--
+Manipulacao de atributos com recurso ao JQuery
+Devolver o valor(recuperar) de um determinado atributo: attr("atributo");
+$(document).ready(function(){
+	$("#disJQ").click(function(){
+		alert($("p").attr("id"));
+	}).css("border","2px solid #ff00ff");
+});
+//-------------------------------------
+Alterar o valor do atributo
+Etapas:
+Filtrar o elemento e depois aplicar o novo valor
+$("p").attr("id","pSergio");
+//-----------------------------
+Encadear mais que uma manipulacao
+$("p").attr("id","pSergio").attr("class","classparagrafo1");
+//--------------------------------------
+Alterar fotos com uso Jquery
+$("img").attr("src","Aula 5 - Material/2.jpg")
+.attr("title","foto2");
+//----------------------------------------
+Atraves de array associativo
+$("img").attr({
+				src:"Aula 5 - Material/2.jpg",
+				title:"foto2"
+			});
+//-------------------------------
+Funcao que altera em funcao do click
+$(document).ready(function(){
+	$("#disJQ").click(function(){
+		mudar();
+	}).css("border","2px solid #ff00ff");
+});
+
+var cont = 2;
+function mudar(){
+	var str = "Aula 5 - Material/";
+	str += cont+".jpg";
+	$("img")
+		.attr("src",str)
+		.attr("title","foto"+cont);
+	cont++;
+	if(cont==6){         OU            cont = cont == 6 ? 1 : cont;
+		cont=1;
+	}
+}
+//---------------------------------
+Metodo de remocao de atributos de elementos
+$("img").removeAttr("title");
+ou
+$("img").removeAttr("title").removeAttr("alt");
+//----------------------------------
+Verificar a ocorrencia de uma class associada ao elemento
+Retorna boolean.
+$("img").hasClass("borda");
+//-------------------------------------
+Adicionar uma class(atributo) css num determinado alemento
+	alert($("img").hasClass("borda"));
+	$("img").addClass("borda");//add
+	alert($("img").hasClass("borda"));
+//-------------------------------------
+Alternar uma class(determinado comportamento executa o contrario do inicialmente processado).
+$("img").toggleClass("borda");
+//---------------------------------------
+Manipulacao do conteudo do elemento Método .html()- retorna o conteudo html do elemento
+alert($("p").html());
+//---------------------------------------
+A mesma funcao pode ser usada para atribuicao (devemos passar uma string, e poderá conter html)
+$("p").html("<br/<P alterada via Jquery, com o metodo html");
+//------------------------------------------
+Metodo .text - semelhante ao .html, mas neste caso retorna apenas texto puro.
+$("h2").text("Texto");
+//-------------------------------------------
+Método val() - recuperar  o valor dos componentes de um formulario
+alert($(":input").val());
+//-------------------------------------------
+Exemplo
+Inserir o valor recuperado e aplicar ao h2
+$("h2").html($(":input").val());
+//-------------------------------------------
+Nota:Até este ponto todos os metodos trocavam apenas o conteudo dos elementos
+//-------------------------------------------
+Método replaceWith()- troca o elemento por outro elemento.
+$("h2").replaceWith("<div>Div criado troca com h2.</div>");
+//-----------------------------------------------
+Pela criacao em JS.
+var p = document.createElement("p");
+	p.appendChild(document.createTextNode("Paragrafo iserido!!"));
+	document.body.appendChild(p);
+$("h2").replaceWith(p);
+//-----------------------------------
+Criar um elemento com uso do JQuery, o documento é percorrido pela arvore DOM
+$("<img />");-elemento img
+
+var imgNew= $("<img />");
+$("body").append(imgNew);
+//------------------------
+Add atributos ao elemento
+var imgNew = ("<img />",{src:"Aula 5 - Material/4.jpg",style:"width:100px");
+$("body").append(imgNew);
+//--------------------------------------
+var newLine = $("<br/>");
+var newImg = $("<img/>",{src:"Aula 5 - Material/4.jpg",style:"width:100px", title:"Titulo da imagem", click:function(){
+		alert("fui criado pelo jquery, e tambem já fui criado....");
+	}
+});
+$("body").append(newLine).append(newImg);
+//----------------------------------
+Criar lista de dados
+var listaNaoOrdenada = $("<ul/>").append($("<li/>")).append("Dados inseridos pelo Jquery.");
+$("body").append(newLine).append(newImg).append(ListaNaoOrdenada);
+//**************************************
+Tipos de Insercao:
+append() -Insere na ultima pos do elemento invocador
+prepend() - Insere no inicio pos do elemento invocador
+alter() - Insere apos o elemento
+before() - Insere antes do elemento
+wrap() - Envolve o elemento
+clone() - Duplica o elemento
+//*************************************
+//*************************************
+Tipos de eliminacao na arvore
+remove - remove um determinado alemento
+empty - limpa um determinado elemento
+unwrap - remove o elemento que o envolve
+
+ -->

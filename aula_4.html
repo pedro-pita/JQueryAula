@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JSQ 4</title>
+	<script type="text/javascript" src="js/jquery-3.3.js"></script>
+	<script type="text/javascript" src="js/aula_4.js">
+	</script>
+</head>
+<body>
+	<form action="#" method="get">
+		<fieldset>
+			<legend>Dados Pessoais</legend>
+			<label for="email"> Email: </label>
+			<input type="text" id="email" readonly="readonly" value="email" /> <br /> 
+			Senha:<input type="password" id="senha" /><br />
+			<label for="sexo">Sexo:</label>
+			 M<input type="radio" name="sexo" value="M" tabindex="2"  />
+			 F<input type="radio" name="sexo" value="F" checked="checked" tabindex="3" /><br />
+			<label for="casa">A tua casa tem:</label><br />
+			<input type="checkbox" name="casa" value="quarto" /> Tem quarto <br />
+			<input type="checkbox" name="casa" value="sala" /> Tem sala
+			<br />
+			Selecione foto:
+			<input type="file" id="foto" /><br />
+			Indique numero de irmão:
+			<select id="irmaos">
+				<option>0</option>
+				<option selected="selected">1</option>
+				<option>2</option>
+				<option>3</option>
+			</select>
+			<br />
+			Solteiro ou Casado:<br />
+			<select id="solcas">
+				<optgroup label="Solteiro">
+					<option>Solteiro sem filhos</option>
+					<option>Solteiro 1 filhos</option>
+					<option>Solteiro 2 filhos</option>
+				</optgroup>
+				<optgroup label="Casado">
+					<option selected="selected">Casado sem filhos</option>
+					<option disabled="disabled">Casado 1 filhos</option>
+					<option>Casado 2 filhos</option>
+				</optgroup>
+			</select><br />
+			Comentario:<br />
+			<textarea cols="60" rows="10" tabindex="1" >Escreva um comentario</textarea>
+			
+			<input type="hidden" id="info_vital" value="secreto"/>
+			
+			<input type="reset" value="limpa dados" />
+			<input type="submit" value="Enviar dados" />
+			<input type="button" value="Botao" />
+		</fieldset>
+	</form>
+</body>
+</html>
+<!--
+Seletores de controlo de formularios
+**************************************
+Seletor generico de formularios
+Sintaxe: input - recuperaca qualquer tipo de elemento que seja input
+
+$(":input").css("background","#0000ff");
+//---------------------------------------
+Filtrar elemento do tipo input(text)
+$(":text").css("background","#0000ff");
+
+Alterar eventos ao input do tipo button
+$(":button").click(function(){
+	$(":text").css("background","#0000ff");
+}).css("border","2px solid #ff00ff");
+//-----------------------------------------------
+Filtrar elemento do tipo "password"
+$(":password").css("background","#0000ff");
+//-----------------------------------------------
+Filtrar elemento do tipo "radio"
+Este tipo de input tem metodos alterados, que permitem percorrer os elementos: next(), prev(), parent() 
+$(":radio").parent().css("background","#0000ff");
+//-----------------------------------------------
+Filtrar elemento do tipo "checkbox"
+Este tipo de input tem metodos alterados, que permitem percorrer os elementos: next(), prev(), parent() 
+$(":checkbox").parent().css("background","#0000ff");
+//------------------------------------------
+Filtrar elementos do tipo "file"
+$(":file").css("background","#0000ff");
+//----------------------------------------
+Filtrar elementos do tipo "select"
+$("select").css("background","#0000ff");
+//----------------------------------------
+Filtrar elementos do tipo "textarea"
+$("textarea").css("background","#0000ff");
+//----------------------------------------
+Filtrar elementos do tipo "submit"
+$(":submit").css("background","#0000ff");
+//----------------------------------------
+Filtrar elementos do tipo "reset"
+$(":reset").css("background","#0000ff");
+//----------------------------------------
+Filtrar elemento do tipo input em que o atributo permite receber valores
+$(":enable").css("background","#0000ff");
+//------------------------------------------
+Filtrar elemento do tipo input em que o atributo nao permite receber valores
+$(":disabled").css("background","#0000ff");
+//----------------------------------
+Filtrar elemento do tipo input em que o atributo esteja pre-selecionado.
+Este tipo de input tem metodos atrelados, qu permitem percorrer os elementos:next(), parent(), prev()
+$(":selected").parent().css("background","#0000ff");
+-->

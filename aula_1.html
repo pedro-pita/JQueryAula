@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Modelo</title>
+		<script type="text/javascript"  src="./js/jquery-3.3.js">
+			
+		</script>
+	</head>
+	<body>
+		<p id="nome">Afonso Inácio</p>
+	</body>
+</html>	
+
+<!--
+Jquery - Biblioteca JS, criada por forma a simplificar a programação em JS.
+Biblioteca - é um arquivo JS escrito e padronizado local ou remotamente.
+//Acesso local atraves da importacao do ficheiro ' jquery-3.3.js'
+//<script type="text/javascript">
+	window.onload = function(){
+		document.getElementById("nome").onclick = mudarCor;
+		function mudarCor(){
+			document.getElementById("nome").style.color="#0000ff";
+		}
+	}
+</script>
+//--------------------------------------------
+Acesso ao elemento é feito via seletores.
+Sintaxe -> $()
+Em JS puro o total carregamento
+window.onload = function(){};
+Em jquery:
+$(document).ready(function(){});
+//----------------**-*-*-*-*-*--*-*--*-*-*-*/-*/-*/-*/-*/-*/
+$(document.ready(function(){
+	$("p").click(function(){
+		$("#nome").css("color","#0000ff");
+	});
+});
+**************************
+Nota: Em jquery usamos seletores(css) para aceder aos elementos.
+-->
