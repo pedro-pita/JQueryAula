@@ -15,7 +15,7 @@
 	<div id="boxes">
 		<div id="dialog" class="window">
 			<a href="#" class="close">Fechar[X]</a>
-			<form  action="<?php echo 'send.php';?>" method="post" id="newsletter" name="newsletter">
+			<form  action="<?php echo 'php/aula13Desafio.php';?>" method="post" id="newsletter" name="newsletter">
 				<input type="text" name="nome" id="nome" class="obrigatorio" placeholder="Insira o nome"/>
 				<input type="email" name="email" id="email" class="obrigatorio" value="" placeholder="Insira o email"/>
 				<p>
@@ -206,7 +206,9 @@
 					<option value="Organizacao">Organização</option>
 				</select>
 				<input type="submit" value="Subscreva"/>
+				
 				<span class="arrow">Campos de preenchimento obrigatorio.</span>
+				
 			</form>
 		</div>
 	</div>

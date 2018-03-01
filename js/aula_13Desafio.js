@@ -5,7 +5,6 @@ $(function(){
 		
 		var id = $('#dialog');
 		
-		//capturar dim
 		var maskHeight = $(document).height();
 		var maskWidth = $(window).width();
 		
@@ -32,21 +31,30 @@ $(function(){
 		$(this).hide();
 		$('.window').hide();
 	});
-	$('submit').click(function(e){
+	$('input[type=submit]').click(function(e){
 		e.preventDefault();
-		alert("assdasds");
-		verificarPreenchimento();
+		$verificado = verificarPreenchimento();
+		if($verificado == true){
+			$email = $('input[type=email]').val();
+			$nome = $('input[type=text]').val();
+			$idade = $('#idade').val();
+			$sexo = $('#sexo').val();
+			$cidade = $('#cCid').val();
+			$assinante = $('#assinante').val();
+			
+			alert("Email:" + $email + " Nome:" + $nome + " Idade" + $idade + " Sexo:" + $sexo + " Cidade" + $cidade + " Assinante:" + $assinante);
+		}else{
+			alert("Preencha tudo!")
+		}
 	});
 	function verificarPreenchimento(){
- 
-        var isValid = true;
-        $("input[type=email]").each(function() {
-            if (this.val() == "") { isValid = false; }
-        });
-			if(isValid == false){ 
-				alert("Todos os campos devem ser preenchidos."); 
-				return false;
-			} 
-            else { alert("Eureka"); }   
-       }
+        var preenchido = true;
+        if(($('input[type=text]').val() == "") || ($("input[type=email]").val() == "")){
+			preenchido = false;
+        }else{
+			preenchido = true;
+		}
+		return preenchido;
+	}
+    
     });
