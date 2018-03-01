@@ -1,4 +1,5 @@
 $(function(){
+	alert("asds");
 	$('#item_newsletter').click(function(e){
 		e.preventDefault();
 		
@@ -31,4 +32,21 @@ $(function(){
 		$(this).hide();
 		$('.window').hide();
 	});
-});
+	$('submit').click(function(e){
+		e.preventDefault();
+		alert("assdasds");
+		verificarPreenchimento();
+	});
+	function verificarPreenchimento(){
+ 
+        var isValid = true;
+        $("input[type=email]").each(function() {
+            if (this.val() == "") { isValid = false; }
+        });
+			if(isValid == false){ 
+				alert("Todos os campos devem ser preenchidos."); 
+				return false;
+			} 
+            else { alert("Eureka"); }   
+       }
+    });
